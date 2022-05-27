@@ -11,10 +11,173 @@
 				"type": "constructor"
 			},
 			{
-				"inputs": [],
-				"name": "get_eths",
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"name": "active_aucs",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "auc_name",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "max_user",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "max_value",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "auc_name",
+						"type": "string"
+					}
+				],
+				"name": "auc_lider",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"name": "auctions",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "auc_name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "min_value",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "min_val",
+						"type": "uint256"
+					}
+				],
+				"name": "create_auction",
 				"outputs": [],
-				"stateMutability": "payable",
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"name": "end_auction",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "auction",
+						"type": "string"
+					}
+				],
+				"name": "get_auc_info",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "auc_name",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "max_user",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "max_value",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Test.ActiveAuc",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "get_aucs",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "auc_name",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "min_value",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Test.Auction[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -33,27 +196,43 @@
 			{
 				"inputs": [
 					{
+						"internalType": "string",
+						"name": "auc_name",
+						"type": "string"
+					}
+				],
+				"name": "participate_auction",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "address",
 						"name": "",
 						"type": "address"
-					}
-				],
-				"name": "payments",
-				"outputs": [
+					},
 					{
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
 					}
 				],
+				"name": "users",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "auc_name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "min_value",
+						"type": "uint256"
+					}
+				],
 				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "withdrawAll",
-				"outputs": [],
-				"stateMutability": "nonpayable",
 				"type": "function"
 			}
 		],
@@ -85,10 +264,10 @@
 	},
 	"sources": {
 		"blockchain_project/test_contract.sol": {
-			"keccak256": "0x008aaa316488fd983a228a616a4bb2ac830355da2f83afe308c3e321bb79a1bb",
+			"keccak256": "0x9a23328d83e4b80e94ff08c44b9affb2231f0109b25fd48482946801eb6f40b9",
 			"urls": [
-				"bzz-raw://d58075380c8bdf058aea547caf3616faeec2aa55a760b21df4e7dbc821736062",
-				"dweb:/ipfs/QmXhwnYYcKXmBw23Z2pArWjo36E4YtwRYJvKwQQWf2si41"
+				"bzz-raw://73f6176d4ed8a9242ec06f2b28d538b8f5235e68e8e362dea18697126ae138aa",
+				"dweb:/ipfs/QmPXqgBTc72mbdAfs8Eo8peQBk4sjhTK35AF4WubSTQUwo"
 			]
 		}
 	},
